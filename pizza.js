@@ -43,5 +43,26 @@ class pizza{
     var discount = pizza.price()*percent;
     return pizza.price() - discount;
   }
+  addTopping(typetop,newtop){
+    if(toptype == meat){
+      meatToppings.push(newtop);
+    }
+    if(toptype == veggie){
+      veggieToppings.push(newtop);
+    }
+  }
+
+  removeTopping(toptype,newtop){
+    if(toptype == meat){
+      var front = meatToppings.splice(0,indexOf(newtop));
+      var back = meatToppings.splice(indexOf(newtop)+1,meatToppings.length);
+      return front.join(back);
+    }
+    if(toptype == veggie){
+      var front = veggieToppings.splice(0,indexOf(newtop));
+      var back = veggieToppings.splice(indexOf(newtop)+1,veggieToppings.length);
+      return front.join(back);
+    }
+  }
 
 }
